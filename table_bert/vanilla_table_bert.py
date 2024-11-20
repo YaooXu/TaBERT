@@ -10,7 +10,7 @@ import math
 import sys
 from typing import List, Any, Tuple, Dict
 import numpy as np
-from fairseq import distributed_utils
+# from fairseq import distributed_utils
 from tqdm import tqdm
 
 import torch

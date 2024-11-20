@@ -16,13 +16,13 @@ import torch
 import torch.nn as nn
 
 from torch_scatter import scatter_mean
-from fairseq import distributed_utils
+# from fairseq import distributed_utils
 
 from table_bert.table import Column
 from table_bert.utils import (
     BertConfig, BertForPreTraining, BertForMaskedLM,
     BertSelfOutput, BertIntermediate, BertOutput,
-    BertLMPredictionHead, BertLayerNorm,
+    BertLMPredictionHead,
     gelu,
     TransformerVersion, TRANSFORMER_VERSION
 )

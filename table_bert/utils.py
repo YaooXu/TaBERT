@@ -30,13 +30,26 @@ try:
     TRANSFORMER_VERSION = TransformerVersion.PYTORCH_PRETRAINED_BERT
     logging.warning('You are using the old version of `pytorch_pretrained_bert`')
 except ImportError:
-    from transformers.tokenization_bert import BertTokenizer    # noqa
-    from transformers.modeling_bert import (    # noqa
-        BertForMaskedLM, BertForPreTraining, BertModel,
-        BertSelfOutput, BertIntermediate, BertOutput,
-        BertLMPredictionHead, BertLayerNorm, gelu
-    )
-    from transformers.configuration_bert import BertConfig  # noqa
+    # from transformers.tokenization_bert import BertTokenizer    # noqa
+    # from transformers.modeling_bert import (    # noqa
+    #     BertForMaskedLM, BertForPreTraining, BertModel,
+    #     BertSelfOutput, BertIntermediate, BertOutput,
+    #     BertLMPredictionHead, BertLayerNorm, gelu
+    # )
+    # from transformers.configuration_bert import BertConfig  # noqa
 
+    from transformers.models.bert import BertTokenizer, BertConfig
+    from transformers.models.bert.modeling_bert import (
+        BertForMaskedLM,
+        BertForPreTraining,
+        BertModel,
+        BertSelfOutput,
+        BertIntermediate,
+        BertOutput,
+        BertLMPredictionHead,
+        # BertLayerNorm,
+    )
+    from transformers.activations import gelu
+    
     hf_flag = 'new'
     TRANSFORMER_VERSION = TransformerVersion.TRANSFORMERS

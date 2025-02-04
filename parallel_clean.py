@@ -149,9 +149,9 @@ def json2string(exm):
 
 def preprocess():
 
-    input_dir = osp.join('./data/pretrain/', 'chunks')
+    input_dir = osp.join('./data/preprocessed_data/')
     # input_dir = osp.join('./data/pretrain/', 'debug_chunks')
-    output_dir = osp.join('./data/pretrain/', 'arrow')
+    output_dir = osp.join('./data/preprocessed_data/')
 
     files = []
     for dirpath, _, filenames in os.walk(input_dir):
@@ -189,7 +189,7 @@ def serialize_text_to_arrow(all_text, folder, split=None):
 
     from datasets import Dataset
     dataset = Dataset.from_list(all_text)
-    dataset.to_parquet("./data/pretrain/data.pq")
+    dataset.to_parquet("./data/preprocessed_data/data.pq")
 
 
 if __name__ == "__main__":
